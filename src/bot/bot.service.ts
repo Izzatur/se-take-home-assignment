@@ -90,7 +90,7 @@ export class BotService {
                 if (uptProcess[0]) {
                     console.log('Bot id: ' + id +' Preparing order: ' + orderId);
                     await this.orderService.emitOrder(); // emit order to socket io                                                
-                    await this.delay(20000); // delay in 10 seconds
+                    await this.delay(10000); // delay in 10 seconds
                     let getBot = await this.getBotById(id); // check if the bot still exist
                     if (getBot[0]) {
                         await this.orderService.updateOrder(orderId, 'Completed'); // update order to completed 
